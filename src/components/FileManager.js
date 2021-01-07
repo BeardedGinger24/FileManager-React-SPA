@@ -52,12 +52,35 @@ function FileManager() {
     }, [id]);
 
     return (
-        <div class="">
-            <div class="text-center ">
-                <h2 class="font-monospace">File Manager</h2>
-                <h3>Folder: {currentFolder}</h3>
+        <div class="container-lg">
+            <div class="container ">
+                <div class="text-center">
+                    <h2 class="font-monospace">File Manager</h2>
+                    <h3>Folder: {currentFolder}</h3>
+                </div>
+
+                <div class="row">
+                    <div class="">
+                        <p>
+                            <Link to={`/createFolder/${id || ""}`}>
+                                <img src="https://img.icons8.com/color/48/000000/add-folder.png" />
+                            </Link>
+                        </p>
+                    </div>
+
+                    <p>
+                        <Link to={`/fileUpload/${id || ""}`}>
+                            <img src="https://img.icons8.com/color/48/000000/add-file.png" />
+                        </Link>
+                    </p>
+                </div>
+
             </div>
-            <div class="mx-auto">
+
+
+
+
+            <div class="mx-auto bg-light">
                 <table cellPadding="3" class="table">
                     <thead>
                         <tr>
@@ -126,8 +149,7 @@ function FileManager() {
                     </tbody>
                 </table>
             </div>
-            <p> <Link to={`/createFolder/${id || ""}`}>Create Folder</Link></p>
-            <p> <Link to={`/fileUpload/${id || ""}`}>Upload File</Link></p>
+
             <p>
                 <Link to={`/${lastPage}`}>
                     {back}
